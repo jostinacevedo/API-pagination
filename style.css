@@ -1,0 +1,116 @@
+/* Estilos Globales */
+:root {
+    --bg-color: #454750;
+    --card-bg: #464242;
+    --primary: #6c5ce7;
+    --text: #0a0a0a;
+    --error: #ff7675;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Encabezado */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.logo h1 span { color: var(--primary); }
+
+/* Grilla de Juegos (Aquí está la magia del orden) */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    min-height: 400px;
+}
+
+/* Tarjetas de Juegos */
+.game-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.game-card:hover { transform: translateY(-10px); }
+
+.game-img {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.game-info { padding: 15px; }
+
+/* Paginación (Abajo y centrada) */
+.pagination-footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: #363232;
+    border-radius: 10px;
+}
+
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-group { display: flex; gap: 8px; }
+
+.btn-nav {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-nav:disabled {
+    background: #444;
+    cursor: not-allowed;
+}
+
+/* Mensajes de estado */
+.status-msg { text-align: center; padding: 20px; }
+.hidden { display: none; }
+.error { color: var(--error); border: 1px solid var(--error); border-radius: 8px; }
+/* Esto obligará a los elementos a ponerse uno al lado del otro */
+#games-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.game-card {
+    background: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.game-img {
+    height: 150px;
+    background-size: contain; /* Para que el Digimon se vea completo */
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 10px;
+}

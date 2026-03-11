@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digimon Explorer - API Pagination</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app">
+        <header class="main-header">
+            <div class="logo">
+                <h1>Digi<span>mon</span></h1>
+            </div>
+            
+            <div class="filter-controls">
+                <label for="limit-selector">Mostrar:</label>
+                <select id="limit-selector">
+                    <option value="12">12 juegos</option>
+                    <option value="20" selected>20 juegos</option>
+                    <option value="40">40 juegos</option>
+                </select>
+            </div>
+        </header>
+
+        <div id="loader" class="status-msg">
+            <div class="spinner"></div>
+            <p>Buscando en la base de datos...</p>
+        </div>
+        
+        <div id="error-message" class="status-msg error hidden">
+            ⚠️ Ocurrió un error al cargar los juegos.
+        </div>
+
+        <main id="games-grid" class="games-grid">
+            </main>
+
+        <footer class="pagination-footer">
+            <div class="pagination-wrapper">
+                <div class="nav-group">
+                    <button id="btn-first" class="btn-nav" title="Primera página">|<<</button>
+                    <button id="btn-prev-5" class="btn-nav" title="Retroceder 5">-5</button>
+                    <button id="btn-prev" class="btn-nav">Anterior</button>
+                </div>
+
+                <div class="page-indicator">
+                    <span id="page-info">Página 1 de ...</span>
+                </div>
+
+                <div class="nav-group">
+                    <button id="btn-next" class="btn-nav">Siguiente</button>
+                    <button id="btn-next-5" class="btn-nav" title="Avanzar 5">+5</button>
+                    <button id="btn-last" class="btn-nav" title="Última página">>>|</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
